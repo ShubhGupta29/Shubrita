@@ -51,7 +51,7 @@ $(document).ready(function () {
 
     if (windowWidth <= 400) {
       document.getElementById("ShubhGupta").style.transition = "all 0.5s ease";
-      document.getElementById("ShubhGupta").innerText = "SG";
+      document.getElementById("ShubhGupta").innerText = "SN";
       document.getElementById("ShubhGupta").style.color = "crimson";
       // document.getElementById('ShubhGupta').style.marginLeft="-64px"
       document.getElementById("portfolio").innerText = "";
