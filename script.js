@@ -14,16 +14,39 @@ $(document).ready(function () {
   $(window).scroll(function () {
     var windowWidth = $(window).width();
 
-    if (windowWidth > 400) {
+    if (windowWidth > 690) {
       if (this.scrollY > 40) {
         document.getElementById("ShubhGupta").style.transition =
           "all 0.5s ease";
         document.getElementById("Namrita").style.display = "none";
         document.getElementById("ShubhGupta").innerText = "SN";
-        document.getElementById("ShubhGupta").style.color = "crimson";
+        document.getElementById("ShubhGupta").style.color = "#5e9a8e";
         document.getElementById("ShubhGupta").style.marginLeft = "-4px";
         document.getElementById("portfolio").innerText = "";
-        // document.getElementById('menu').style.color="crimson";
+        // document.getElementById('menu').style.color="#5e9a8e";
+        // document.getElementById("navbar").classList.add("sticky");
+      } else {
+        document.getElementById("ShubhGupta").style.transition =
+          "all 0.5s ease";
+        document.getElementById("Namrita").style.display = "inherit";
+        document.getElementById("ShubhGupta").innerHTML = "Shubh";
+        document.getElementById("ShubhGupta").style.color = "#fff";
+        document.getElementById("ShubhGupta").style.marginLeft = "0";
+        document.getElementById("portfolio").innerText = "weds";
+        // document.getElementById('menu').style.color="#fff";S
+        document.getElementById("navbar").removeClass("sticky");
+      }
+    }
+    else{
+      if (this.scrollY > 40) {
+        document.getElementById("ShubhGupta").style.transition =
+          "all 0.5s ease";
+        document.getElementById("Namrita").style.display = "none";
+        document.getElementById("ShubhGupta").innerText = "SN";
+        document.getElementById("ShubhGupta").style.color = "#5e9a8e";
+        document.getElementById("ShubhGupta").style.marginLeft = "-4px";
+        document.getElementById("portfolio").innerText = "";
+        // document.getElementById('menu').style.color="#5e9a8e";
         // document.getElementById("navbar").classList.add("sticky");
       } else {
         document.getElementById("ShubhGupta").style.transition =
@@ -52,10 +75,10 @@ $(document).ready(function () {
     if (windowWidth <= 400) {
       document.getElementById("ShubhGupta").style.transition = "all 0.5s ease";
       document.getElementById("ShubhGupta").innerText = "SN";
-      document.getElementById("ShubhGupta").style.color = "crimson";
+      document.getElementById("ShubhGupta").style.color = "#5e9a8e";
       // document.getElementById('ShubhGupta').style.marginLeft="-64px"
       document.getElementById("portfolio").innerText = "";
-      // document.getElementById('menu').style.color="crimson";
+      // document.getElementById('menu').style.color="#5e9a8e";
       document.getElementById("navbar").addClass("sticky");
     } else {
       console.log("Mobile or tablet screen");
@@ -163,7 +186,7 @@ var tagCloud = TagCloud(".Sphere", Texts, {
 });
 
 // Giving color to each text in sphere
-var color = "crimson";
+var color = "#5e9a8e";
 // document.querySelector(".Sphere").style.color = color;
 
 //   cursor
@@ -182,7 +205,7 @@ var noida =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58283.94590941084!2d77.373174454878!3d28.53559112950471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87cc03f!2sNoida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1703702289376!5m2!1sen!2sin";
 
 var kanpur =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114312.36273751344!2d80.255980662254!3d26.44730377606477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c4770b127c46f%3A0x1778302a9fbe7b41!2sKanpur%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1703702403367!5m2!1sen!2sin";
+  "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d223.31006464520348!2d80.3244475!3d26.424734!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c47000d9dccaf%3A0xa788ad048b63ea4a!2sAchal%20Gupta%20Residence!5e0!3m2!1sen!2sin!4v1738043526969!5m2!1sen!2sin";
 
 document.addEventListener("DOMContentLoaded", function () {
   // Get the container element
@@ -191,9 +214,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Create the iframe element
   var iframe = document.createElement("iframe");
 
-  document.getElementById("location").innerText = "Noida, India";
+  document.getElementById("location").innerText = "Kanpur, India";
   // Set attributes for the iframe
-  iframe.src = noida; // Set the source URL
+  iframe.src = kanpur; // Set the source URL
   iframe.width = "550"; // Set the width
   iframe.height = "400"; // Set the height
   iframe.frameborder = "0"; // Set the frameborder
