@@ -281,7 +281,7 @@ section .title::after{
     font-size: 27px;
 }
 .home .home-content .open {
-    width: 473px;
+    width: auto;
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
@@ -961,8 +961,23 @@ footer span a:hover{
 }
 
 @media (max-width: 690px) {
+    *{
+        overflow-y: none;
+    }
     .max-width{
         padding: 0 23px;
+    }
+    .navbar{
+        backdrop-filter: blur(12px) !important;
+    }
+    .navbar .logo a{
+        width: 50%;
+    }
+    .navbar .logo a span{
+        font: 12px;
+    }
+    .navbar .logo a p{
+        font: 12px;
     }
     .home .home-content .text-2{
         font-size: 60px;
@@ -984,24 +999,6 @@ footer span a:hover{
     }
     .services .serv-content .card .box li span{
         font-size: calc(3.375rem * var(--smaller));
-    }
-}
-
-@media (max-width: 400px) {
-    *{
-        overflow-y: none;
-    }
-    .navbar{
-        backdrop-filter: blur(12px) !important;
-    }
-    .navbar .logo a{
-        width: 50%;
-    }
-    .navbar .logo a span{
-        font: 12px;
-    }
-    .navbar .logo a p{
-        font: 12px;
     }
     .home .home-content .text-2{
         font-size: 36px;
@@ -1045,12 +1042,20 @@ footer span a:hover{
         width: 35px;
         font-size: 23px;
         line-height: 38px;
+        display: none;
     }
 
     section .title{
         font-size: 30px;
     }
     ::-webkit-scrollbar {
+        display: none;
+    }
+
+    .about .about-content .left{
+        display: none;
+    }
+    .about .about-content .right{
         display: none;
     }
 }
