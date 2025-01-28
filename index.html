@@ -349,7 +349,8 @@
             <div class="contact-content">
                 <div class="column left">
                     <!-- <div id="map"></div> -->
-                    <img src="images/Couple_1_caricature.jpg" alt="" id="contact-img">
+                    <!-- <img src="images/Couple_1_caricature.jpg" alt="" id="contact-img"> -->
+                    <video src="images/Wedding-invitation.mp4" id="contact-video" controls></video>
                 </div>
                 <div class="column right">
                     <!-- <div class="connect">
@@ -383,8 +384,8 @@
                         </div>
                     </div>
                 </div>
-                    <div class="text">Message me</div>
-                    <form target="_blank" action="https://formsubmit.co/reachshubhgupta@gmail.com" method="POST">
+                    <div class="text">Best wishes for couple</div>
+                    <!-- <form target="_blank" action="https://formsubmit.co/reachshubhgupta@gmail.com" method="POST">
 
                           <div class="fields">
                             <div class="field name">
@@ -400,37 +401,25 @@
                                 <input name="_subject" placeholder="Subject">
                             </div>
                           </div>
-                          <!-- below are required for extra features of form subimission -->
                           <input type="hidden" name="_captcha" value="false">
                           <input type="hidden" name="_template" value="table">
                           <input type="text" name="_honey" style="display:none">
-                          <!-- end of features -->
                         <div class="field textarea">
                           <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
                         </div>
                         <div class="button-area">
                             <button type="submit">Send message</button>
                         </div>
-                      </form>
+                      </form> -->
 
-
-
-                    <!-- <form>
-                        <div class="fields">
-                            <div class="field name">
-                                <input type="text" placeholder="Name" id="clientName" required>
-                            </div>
-                            <div class="field email">
-                                <input type="email" placeholder="Email" id="clientEmail" required>
-                            </div>
-                        </div>
-                        <div class="field textarea">
-                            <textarea cols="30" rows="10" placeholder="Message.." id="msg" required></textarea>
-                        </div>
-                            <div class="button-area">
-                                <button onclick="sendMsg()">Send message</button>
-                            </div>
-                    </form> -->
+                      <form id="messageForm">
+                        <input type="text" id="formName" placeholder="Your Name" required>
+                        <textarea id="formMessage" placeholder="Your wishes" rows="3" required></textarea>
+                        <button type="submit">Submit Message</button>
+                    </form>
+                
+                    <h3>Messages</h3>
+                    <div id="messageDisplay"></div>
                 </div>
             </div>
         </div>

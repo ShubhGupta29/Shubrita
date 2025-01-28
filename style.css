@@ -755,6 +755,14 @@ section .title::after{
     width: 300px;
     height: 450px;
 }
+.contact .contact-content .left #contact-video{
+    border: solid 2px #5e9a8e;
+    padding: 0.35rem;
+    justify-content: center;
+    display: flex;
+    width: 300px;
+    height: 450px;
+}
 .contact .contact-content .row{
     display: flex;
     height: 65px;
@@ -791,25 +799,26 @@ section .title::after{
 .contact .right form .name{
     margin-right: 10px;
 }
-.contact .right form .field input,
-.contact .right form .textarea textarea{
+.contact .right form input,
+.contact .right form textarea{
     height: 100%;
     width: 100%;
     border: 1px solid lightgrey;
     border-radius: 6px;
     outline: none;
-    padding: 0 15px;
-    font-size: 17px;
+    padding: 4px 16px 4px 16px;
+    font-size: 16px;
     font-family: 'Poppins', sans-serif;
     transition: all 0.3s ease;
 }
-.contact .right form .field input:focus,
-.contact .right form .textarea textarea:focus{
+.contact .right form input:focus,
+.contact .right form textarea:focus{
     border-color: #b3b3b3;
 }
-.contact .right form .textarea textarea{
-  padding-top: 10px;
+.contact .right form textarea{
+  padding-top: 8px;
   resize: none;
+  margin-top: 4px;
 }
 .contact .right form .button-area{
   display: flex;
@@ -897,6 +906,27 @@ footer span a:hover{
 
 .connect i{
     color: #5e9a8e;
+}
+
+form #messageForm{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+form #messageForm input, textarea, button {
+    padding: 10px;
+    font-size: 16px;
+}
+#messageDisplay {
+    margin-top: 20px;
+    text-align: left;
+}
+form #messageForm .message-box {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 5px 0;
 }
 
 
