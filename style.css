@@ -919,8 +919,11 @@ form #messageForm input, textarea, button {
     font-size: 16px;
 }
 #messageDisplay {
-    margin-top: 20px;
+    margin-top: 8px;
     text-align: left;
+}
+#Messages{
+    margin-top: 8px;
 }
 form #messageForm .message-box {
     padding: 10px;
