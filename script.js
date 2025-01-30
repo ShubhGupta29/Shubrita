@@ -1,4 +1,4 @@
-document.getElementById("portfolio").innerText = "weds";
+// document.getElementById("portfolio").innerText = "weds";
 // function sendMsg() {
 //     console.log("Strat");
 //     var cName=document.getElementById("clientName").value;
@@ -23,6 +23,13 @@ $(document).ready(function () {
         document.getElementById("ShubhGupta").style.color = "#5e9a8e";
         document.getElementById("ShubhGupta").style.marginLeft = "-4px";
         document.getElementById("portfolio").innerText = "";
+        // var logo = document.createElement("img");
+        // logo.src="images/SN-Logo.ico"
+        // logo.alt="SN-Logo"
+        // logo.width="32px"
+        // logo.height="32px"
+        // logo.style="margin-bottom: -8px;"
+        // document.getElementById("ShubhGupta").appendChild(logo);
         // document.getElementById('menu').style.color="#5e9a8e";
         // document.getElementById("navbar").classList.add("sticky");
       } else {
@@ -34,7 +41,7 @@ $(document).ready(function () {
         document.getElementById("ShubhGupta").style.marginLeft = "0";
         document.getElementById("portfolio").innerText = "weds";
         // document.getElementById('menu').style.color="#fff";S
-        document.getElementById("navbar").classList.add("sticky");
+        // document.getElementById("navbar").classList.add("sticky");
       }
     }
     else{
@@ -47,7 +54,7 @@ $(document).ready(function () {
         document.getElementById("ShubhGupta").style.marginLeft = "-4px";
         document.getElementById("portfolio").innerText = "";
         // document.getElementById('menu').style.color="#5e9a8e";
-        // document.getElementById("navbar").classList.add("sticky");
+        document.getElementById("navbar").classList.add("sticky");
       } else {
         document.getElementById("ShubhGupta").style.transition =
           "all 0.5s ease";
@@ -57,7 +64,7 @@ $(document).ready(function () {
         document.getElementById("ShubhGupta").style.marginLeft = "0";
         document.getElementById("portfolio").innerText = "weds";
         // document.getElementById('menu').style.color="#fff";S
-        document.getElementById("navbar").removeClass("sticky");
+        document.getElementById("navbar").classList.add("sticky");
       }
     }
 
@@ -289,6 +296,7 @@ const API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
 
 // Load messages when the page loads
 document.addEventListener("DOMContentLoaded", async function () {
+  // document.getElementById("formName").onblur = setTimeout(alert("called key"), 60000);
   let storedMessages = localStorage.getItem("messages");
   
   if (storedMessages) {
@@ -325,6 +333,11 @@ document.getElementById("messageForm").addEventListener("submit", async function
   document.getElementById("formMessage").value = "";
 });
 
+function removeLocalStorageMessages(key){
+  
+  localStorage.removeItem(key);
+}
+
 // Fetch messages from JSONBin (only on first load)
 async function fetchMessages() {
   try {
@@ -332,7 +345,18 @@ async function fetchMessages() {
           headers: { "X-Master-Key": API_KEY }
       });
       let data = await response.json();
-      return data.record.messages || [];
+      return data.record.messages || {
+        "messages": [
+          {
+            "name": "Kiran Gupta",
+            "message": "<3\nGod Bless You"
+          },
+          {
+            "name": "Tester",
+            "message": "All the best ❤️"
+          }
+        ]
+      };
   } catch (error) {
       console.error("Error fetching messages:", error);
       return [];
