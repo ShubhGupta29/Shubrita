@@ -44,7 +44,7 @@ $(document).ready(function () {
         // document.getElementById("navbar").classList.add("sticky");
       }
     }
-    else{
+    else {
       if (this.scrollY > 40) {
         document.getElementById("ShubhGupta").style.transition =
           "all 0.5s ease";
@@ -247,47 +247,47 @@ elements.forEach((element) => {
 });
 
 
-  const second = 1000,
-        minute = second * 60,
-        hour = minute * 60,
-        day = hour * 24;
+const second = 1000,
+  minute = second * 60,
+  hour = minute * 60,
+  day = hour * 24;
 
-  //I'm adding this section so I don't have to keep updating this pen every year :-)
-  //remove this if you don't need it
-  let today = new Date(),
-      dd = String(today.getDate()).padStart(2, "0"),
-      mm = String(today.getMonth() + 1).padStart(2, "0"),
-      yyyy = today.getFullYear(),
-      nextYear = yyyy + 1,
-      dayMonth = "02/23/",
-      birthday = dayMonth + yyyy;
-  
-  today = mm + "/" + dd + "/" + yyyy;
-  if (today > birthday) {
-    birthday = dayMonth + nextYear;
-  }
-  //end
-  
-  const countDown = new Date(birthday).getTime(),
-  x = setInterval(function() {    
+//I'm adding this section so I don't have to keep updating this pen every year :-)
+//remove this if you don't need it
+let today = new Date(),
+  dd = String(today.getDate()).padStart(2, "0"),
+  mm = String(today.getMonth() + 1).padStart(2, "0"),
+  yyyy = today.getFullYear(),
+  nextYear = yyyy + 1,
+  dayMonth = "02/23/",
+  birthday = dayMonth + yyyy;
 
-        const now = new Date().getTime(),
-              distance = countDown - now;
+today = mm + "/" + dd + "/" + yyyy;
+if (today > birthday) {
+  birthday = dayMonth + nextYear;
+}
+//end
 
-        document.getElementById("days").innerText = Math.floor(distance / (day)),
-          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+const countDown = new Date(birthday).getTime(),
+  x = setInterval(function () {
 
-        //do something later when date is reached
-        if (distance < 0) {
-          document.getElementById("headline").innerText = "Marriage Date is here!";
-          document.getElementById("countdown").style.display = "none";
-          document.getElementById("content").style.display = "block";
-          clearInterval(x);
-        }
-        //seconds
-      }, 0);
+    const now = new Date().getTime(),
+      distance = countDown - now;
+
+    document.getElementById("days").innerText = Math.floor(distance / (day)),
+      document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+      document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+      document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+    //do something later when date is reached
+    if (distance < 0) {
+      document.getElementById("headline").innerText = "Marriage Date is here!";
+      document.getElementById("countdown").style.display = "none";
+      document.getElementById("content").style.display = "block";
+      clearInterval(x);
+    }
+    //seconds
+  }, 0);
 
 /////////////////JSONbin.io///////////////
 const BIN_ID = "6798ee60ad19ca34f8f5d991";  // Replace with your JSONBin ID
@@ -298,13 +298,13 @@ const API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
 document.addEventListener("DOMContentLoaded", async function () {
   // document.getElementById("formName").onblur = setTimeout(alert("called key"), 60000);
   let storedMessages = localStorage.getItem("messages");
-  
+
   if (storedMessages) {
-      cachedMessages = JSON.parse(storedMessages); // Load from cache
-      cachedMessages.forEach(displayMessage);
+    cachedMessages = JSON.parse(storedMessages); // Load from cache
+    cachedMessages.forEach(displayMessage);
   } else {
-      cachedMessages = await fetchMessages(); // Fetch from API
-      localStorage.setItem("messages", JSON.stringify(cachedMessages)); // Store in localStorage
+    cachedMessages = await fetchMessages(); // Fetch from API
+    localStorage.setItem("messages", JSON.stringify(cachedMessages)); // Store in localStorage
   }
 });
 
@@ -316,8 +316,8 @@ document.getElementById("messageForm").addEventListener("submit", async function
   let message = document.getElementById("formMessage").value.trim();
 
   if (!name || !message) {
-      alert("Please fill in both fields.");
-      return;
+    alert("Please fill in both fields.");
+    return;
   }
 
   let newMessage = { name, message };
@@ -333,33 +333,33 @@ document.getElementById("messageForm").addEventListener("submit", async function
   document.getElementById("formMessage").value = "";
 });
 
-function removeLocalStorageMessages(key){
-  
+function removeLocalStorageMessages(key) {
+
   localStorage.removeItem(key);
 }
 
 // Fetch messages from JSONBin (only on first load)
 async function fetchMessages() {
   try {
-      let response = await fetch(API_URL, {
-          headers: { "X-Master-Key": API_KEY }
-      });
-      let data = await response.json();
-      return data.record.messages || {
-        "messages": [
-          {
-            "name": "Kiran Gupta",
-            "message": "<3\nGod Bless You"
-          },
-          {
-            "name": "Tester",
-            "message": "All the best ❤️"
-          }
-        ]
-      };
+    let response = await fetch(API_URL, {
+      headers: { "X-Master-Key": API_KEY }
+    });
+    let data = await response.json();
+    return data.record.messages || {
+      "messages": [
+        {
+          "name": "Kiran Gupta",
+          "message": "<3\nGod Bless You"
+        },
+        {
+          "name": "Tester",
+          "message": "All the best ❤️"
+        }
+      ]
+    };
   } catch (error) {
-      console.error("Error fetching messages:", error);
-      return [];
+    console.error("Error fetching messages:", error);
+    return [];
   }
 }
 
@@ -368,23 +368,23 @@ let debounceTimer;
 function debounceSaveMessages() {
   clearTimeout(debounceTimer);
   debounceTimer = setTimeout(() => {
-      saveMessages(cachedMessages);
+    saveMessages(cachedMessages);
   }, 10000); // Delay API call for 10 seconds
 }
 
 // Save messages to JSONBin (only called after debounce)
 async function saveMessages(messages) {
   try {
-      await fetch(API_URL, {
-          method: "PUT",
-          headers: {
-              "Content-Type": "application/json",
-              "X-Master-Key": API_KEY
-          },
-          body: JSON.stringify({ messages })
-      });
+    await fetch(API_URL, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Master-Key": API_KEY
+      },
+      body: JSON.stringify({ messages })
+    });
   } catch (error) {
-      console.error("Error saving messages:", error);
+    console.error("Error saving messages:", error);
   }
 }
 
